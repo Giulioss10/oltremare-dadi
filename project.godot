@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Oltremare Dadi"
 config/description="Mavromonte Dadi"
-config/version="1.2.0.1"
+config/version="1.2.1.0"
 config/tags=PackedStringArray("app")
 run/main_scene="uid://c0uvgi5rk3egr"
 config/features=PackedStringArray("4.7", "Forward Plus")

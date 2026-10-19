@@ -44,7 +44,12 @@ grow_vertical = 2
 theme = ExtResource("2_vb8uh")
 theme_override_styles/panel = ExtResource("3_18xxe")
 
-[node name="Griglia H 1" type="HBoxContainer" parent="Contenitore" unique_id=21386291]
+[node name="Griglia V" type="VBoxContainer" parent="Contenitore" unique_id=922336256]
+layout_mode = 2
+theme = ExtResource("4_5bgg1")
+theme_override_constants/separation = 0
+
+[node name="Griglia H 1" type="HBoxContainer" parent="Contenitore/Griglia V" unique_id=21386291]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -52,14 +57,14 @@ size_flags_vertical = 0
 theme = ExtResource("4_5bgg1")
 theme_override_constants/separation = 10
 
-[node name="Griglia Danni Ricevuti" type="HBoxContainer" parent="Contenitore/Griglia H 1" unique_id=580788532]
+[node name="Griglia Danni Ricevuti" type="HBoxContainer" parent="Contenitore/Griglia V/Griglia H 1" unique_id=580788532]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme = ExtResource("4_5bgg1")
 theme_override_constants/separation = 10
 
-[node name="Danni Ricevuti" type="Label" parent="Contenitore/Griglia H 1/Griglia Danni Ricevuti" unique_id=996926259]
+[node name="Danni Ricevuti" type="Label" parent="Contenitore/Griglia V/Griglia H 1/Griglia Danni Ricevuti" unique_id=996926259]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -69,7 +74,7 @@ theme = ExtResource("5_xc1bs")
 theme_override_font_sizes/font_size = 20
 text = "danni ricevuti:"
 
-[node name="Valore_Danni_Ricevuti" type="SpinBox" parent="Contenitore/Griglia H 1/Griglia Danni Ricevuti" unique_id=1307865136]
+[node name="Valore_Danni_Ricevuti" type="SpinBox" parent="Contenitore/Griglia V/Griglia H 1/Griglia Danni Ricevuti" unique_id=1307865136]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 0
@@ -78,14 +83,14 @@ rounded = true
 alignment = 1
 update_on_text_changed = true
 
-[node name="Griglia Pulsanti" type="HBoxContainer" parent="Contenitore/Griglia H 1" unique_id=736757261]
+[node name="Griglia Pulsanti" type="HBoxContainer" parent="Contenitore/Griglia V/Griglia H 1" unique_id=736757261]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme = ExtResource("4_5bgg1")
 theme_override_constants/separation = 0
 
-[node name="CHECK" type="Button" parent="Contenitore/Griglia H 1/Griglia Pulsanti" unique_id=1709353643]
+[node name="CHECK" type="Button" parent="Contenitore/Griglia V/Griglia H 1/Griglia Pulsanti" unique_id=1709353643]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -96,7 +101,7 @@ text = "✔"
 flat = true
 script = ExtResource("7_m7y2r")
 
-[node name="X" type="Button" parent="Contenitore/Griglia H 1/Griglia Pulsanti" unique_id=1924187192]
+[node name="X" type="Button" parent="Contenitore/Griglia V/Griglia H 1/Griglia Pulsanti" unique_id=1924187192]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -107,14 +112,14 @@ text = "❌"
 flat = true
 script = ExtResource("7_m7y2r")
 
-[node name="Griglia H 2" type="HBoxContainer" parent="Contenitore" unique_id=348334608]
+[node name="Griglia H 2" type="HBoxContainer" parent="Contenitore/Griglia V" unique_id=348334608]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme = ExtResource("4_5bgg1")
 theme_override_constants/separation = 20
 
-[node name="Resistente" type="CheckBox" parent="Contenitore/Griglia H 2" unique_id=1852927653]
+[node name="Resistente" type="CheckBox" parent="Contenitore/Griglia V/Griglia H 2" unique_id=1852927653]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
@@ -123,7 +128,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 text = "resistente"
 
-[node name="Debole" type="CheckBox" parent="Contenitore/Griglia H 2" unique_id=701225740]
+[node name="Debole" type="CheckBox" parent="Contenitore/Griglia V/Griglia H 2" unique_id=701225740]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
@@ -132,7 +137,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 text = "debole"
 
-[node name="???" type="CheckBox" parent="Contenitore/Griglia H 2" unique_id=169043394]
+[node name="???" type="CheckBox" parent="Contenitore/Griglia V/Griglia H 2" unique_id=169043394]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
@@ -140,6 +145,16 @@ theme = ExtResource("5_xc1bs")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 text = "???"
+
+[node name="Attacco Colossale" type="CheckBox" parent="Contenitore/Griglia V" unique_id=953085150]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("5_xc1bs")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "attacco colossale"
 
 [node name="Indietro" type="Button" parent="." unique_id=566460576]
 layout_mode = 0
@@ -156,12 +171,12 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_w7hc1")
 text = "←"
 script = ExtResource("7_m7y2r")
 
-[connection signal="mouse_entered" from="Contenitore/Griglia H 1/Griglia Pulsanti/CHECK" to="Contenitore/Griglia H 1/Griglia Pulsanti/CHECK" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Contenitore/Griglia H 1/Griglia Pulsanti/CHECK" to="Contenitore/Griglia H 1/Griglia Pulsanti/CHECK" method="_on_mouse_exited"]
-[connection signal="pressed" from="Contenitore/Griglia H 1/Griglia Pulsanti/CHECK" to="." method="_on_check_pressed"]
-[connection signal="mouse_entered" from="Contenitore/Griglia H 1/Griglia Pulsanti/X" to="Contenitore/Griglia H 1/Griglia Pulsanti/X" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Contenitore/Griglia H 1/Griglia Pulsanti/X" to="Contenitore/Griglia H 1/Griglia Pulsanti/X" method="_on_mouse_exited"]
-[connection signal="pressed" from="Contenitore/Griglia H 1/Griglia Pulsanti/X" to="." method="_on_x_pressed"]
+[connection signal="mouse_entered" from="Contenitore/Griglia V/Griglia H 1/Griglia Pulsanti/CHECK" to="Contenitore/Griglia V/Griglia H 1/Griglia Pulsanti/CHECK" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Contenitore/Griglia V/Griglia H 1/Griglia Pulsanti/CHECK" to="Contenitore/Griglia V/Griglia H 1/Griglia Pulsanti/CHECK" method="_on_mouse_exited"]
+[connection signal="pressed" from="Contenitore/Griglia V/Griglia H 1/Griglia Pulsanti/CHECK" to="." method="_on_check_pressed"]
+[connection signal="mouse_entered" from="Contenitore/Griglia V/Griglia H 1/Griglia Pulsanti/X" to="Contenitore/Griglia V/Griglia H 1/Griglia Pulsanti/X" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Contenitore/Griglia V/Griglia H 1/Griglia Pulsanti/X" to="Contenitore/Griglia V/Griglia H 1/Griglia Pulsanti/X" method="_on_mouse_exited"]
+[connection signal="pressed" from="Contenitore/Griglia V/Griglia H 1/Griglia Pulsanti/X" to="." method="_on_x_pressed"]
 [connection signal="mouse_entered" from="Indietro" to="Indietro" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Indietro" to="Indietro" method="_on_mouse_exited"]
 [connection signal="pressed" from="Indietro" to="." method="_on_indietro_pressed"]

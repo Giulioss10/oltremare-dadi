@@ -89,15 +89,18 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "azioni"
 
-[node name="Griglia Azioni" type="GridContainer" parent="Finestra/Griglia Verticale" unique_id=1631066831]
+[node name="Griglia Azioni V" type="VBoxContainer" parent="Finestra/Griglia Verticale" unique_id=1588911839]
+layout_mode = 2
+theme = ExtResource("6_x8ojt")
+theme_override_constants/separation = 15
+
+[node name="Griglia Azioni H1" type="HBoxContainer" parent="Finestra/Griglia Verticale/Griglia Azioni V" unique_id=1178298032]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("6_x8ojt")
-theme_override_constants/h_separation = 25
-theme_override_constants/v_separation = 5
-columns = 3
+theme_override_constants/separation = 30
 
-[node name="Falce" type="Button" parent="Finestra/Griglia Verticale/Griglia Azioni" unique_id=871939866]
+[node name="Falce" type="Button" parent="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1" unique_id=871939866]
 layout_mode = 2
 theme = ExtResource("3_xljrd")
 theme_override_constants/outline_size = 8
@@ -105,7 +108,21 @@ theme_override_font_sizes/font_size = 25
 text = "rosso artiglio"
 script = ExtResource("4_blr00")
 
-[node name="Difesa" type="Button" parent="Finestra/Griglia Verticale/Griglia Azioni" unique_id=1357880797]
+[node name="Griglia Azioni H2" type="HBoxContainer" parent="Finestra/Griglia Verticale/Griglia Azioni V" unique_id=1735851622]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_x8ojt")
+theme_override_constants/separation = 30
+
+[node name="Pugni" type="Button" parent="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2" unique_id=2038199753]
+layout_mode = 2
+theme = ExtResource("3_xljrd")
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = "pugni"
+script = ExtResource("4_blr00")
+
+[node name="Difesa" type="Button" parent="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2" unique_id=1357880797]
 layout_mode = 2
 theme = ExtResource("3_xljrd")
 theme_override_constants/outline_size = 8
@@ -226,12 +243,15 @@ stretch_mode = 5
 [connection signal="mouse_entered" from="Indietro" to="Indietro" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Indietro" to="Indietro" method="_on_mouse_exited"]
 [connection signal="pressed" from="Indietro" to="." method="_on_indietro_pressed"]
-[connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni/Falce" to="Finestra/Griglia Verticale/Griglia Azioni/Falce" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni/Falce" to="Finestra/Griglia Verticale/Griglia Azioni/Falce" method="_on_mouse_exited"]
-[connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni/Falce" to="." method="_on_falce_pressed"]
-[connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni/Difesa" to="Finestra/Griglia Verticale/Griglia Azioni/Difesa" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni/Difesa" to="Finestra/Griglia Verticale/Griglia Azioni/Difesa" method="_on_mouse_exited"]
-[connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni/Difesa" to="." method="_on_difesa_pressed"]
+[connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Falce" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Falce" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Falce" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Falce" method="_on_mouse_exited"]
+[connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Falce" to="." method="_on_falce_pressed"]
+[connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Pugni" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Pugni" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Pugni" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Pugni" method="_on_mouse_exited"]
+[connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Pugni" to="." method="_on_pugni_pressed"]
+[connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Difesa" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Difesa" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Difesa" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Difesa" method="_on_mouse_exited"]
+[connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Difesa" to="." method="_on_difesa_pressed"]
 [connection signal="toggled" from="Finestra/Griglia Verticale/Griglia Opzioni V/Griglia Opzioni H1/Griglia Frenesia/Frenesia" to="." method="_on_frenesia_toggled"]
 [connection signal="toggled" from="Finestra/Griglia Verticale/Griglia Opzioni V/Griglia Opzioni H2/Braccio Demoniaco" to="." method="_on_braccio_demoniaco_toggled"]
 [connection signal="pressed" from="Oggetti/Pulsante Oggetti" to="." method="_on_pulsante_oggetti_pressed"]

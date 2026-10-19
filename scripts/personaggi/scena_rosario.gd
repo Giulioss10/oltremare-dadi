@@ -167,3 +167,7 @@ func _on_chiusura_del_riccio_pressed() -> void:
 	
 	# risultati
 	terminale.text += "\nRIDUZIONE:  " + str(riduzione)
+	
+	# inserisci danni ricevuti e calcola danni subiti
+	info_danni = await inserisci_danni_ricevuti()
+	danni_subiti = danno_subito(info_danni, riduzione, terminale)

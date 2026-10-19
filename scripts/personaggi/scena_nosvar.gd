@@ -76,6 +76,39 @@ func _on_falce_pressed() -> void:
 	else:
 		terminale.text += "\nDANNI:  " + str(danni) + " Taglienti/Perforanti"
 
+## Attacco DISARMATO
+func _on_pugni_pressed() -> void:
+	# resetta variabili
+	reset()
+	
+	# attacco inutilizzabile senza un braccio
+	if not braccio_demoniaco:
+		terminale.text += "Braccio mancante"
+		return
+	
+	# inizializza il danno al valore del M.AM
+	danni += int(m_AM.value)
+	
+	# attacco DISARMATO
+	risultato = attacco_disarmato(false)
+	danni += risultato["valore"]
+	terminale.text += risultato["testo"]
+	
+	# oggetti offensivi
+	danni += usa_oggetti_offensivi()
+	
+	# se la frenesia è attiva, aggiungila al danno e incrementala
+	if frenesia:
+		var bonus = int(punti_frenesia.value)
+		terminale.text += "\nbonus FRENESIA:  " + str(bonus)
+		punti_frenesia.value += 1
+		danni += bonus
+		
+		# risultati
+		terminale.text += "\n\nDANNI:  " + str(danni) + " Bruti - Arcano"
+	else:
+		terminale.text += "\nDANNI:  " + str(danni) + " Bruti"
+
 # - Difese -
 ## Difesa CLASSE MEDIA
 func _on_difesa_pressed() -> void:

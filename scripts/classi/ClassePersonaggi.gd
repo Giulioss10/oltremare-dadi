@@ -240,12 +240,25 @@ func danno_subito(_info_danni: Dictionary, _riduzione: int, _terminale: TextEdit
 	var _danni_ricevuti : int  = _info_danni["danni ricevuti"]
 	var _resistente     : bool = _info_danni["resistente"] 
 	var _debole         : bool = _info_danni["debole"]
-	var _antiflusso     : bool = _info_danni["???" ]
+	var _antiflusso     : bool = _info_danni["???"]
+	var _colossale      : bool = _info_danni["colossale"]
 	
 	var _neutrale     : bool   = _resistente == _debole
 	var _malus        : int    = int(_antiflusso)
 	var _danni_subiti : int    = max(_danni_ricevuti - _riduzione, 0)
 	var _testo        : String = " ("
+	
+	if newline :
+		_terminale.text += "\n"
+	
+	if _colossale:
+		var _risultato : Dictionary = tira(1, SCHIVATA)
+		_terminale.text += "\nDado Attacco Colossale: " + str(_risultato["tiri"]) + "\n"
+		if _risultato["valore"] == INF:
+			_terminale.text += "SCHIVA!!!"
+			return 0
+		else:
+			_danni_subiti = max(_danni_subiti - _risultato["valore"], 0)
 	
 	if _neutrale:
 		_danni_subiti *= 1 + 1*_malus
@@ -257,9 +270,6 @@ func danno_subito(_info_danni: Dictionary, _riduzione: int, _terminale: TextEdit
 	elif _debole:
 		_danni_subiti *= 2 + 1*_malus
 		_testo += "debole" + "???".repeat(_malus) + ")"
-	
-	if newline :
-		_terminale.text += "\n"
 	
 	_terminale.text += "DANNI SUBITI: " + str(_danni_subiti) + _testo
 	

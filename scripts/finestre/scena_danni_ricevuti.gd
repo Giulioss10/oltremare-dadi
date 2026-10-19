@@ -13,12 +13,14 @@ func info_danni() -> Dictionary:
 	var resistente     : bool = %Resistente.button_pressed
 	var debole         : bool = %Debole.button_pressed
 	var antiflusso     : bool = %"???".button_pressed
+	var colossale      : bool = %"Attacco Colossale".button_pressed
 	
 	return {
 		"danni ricevuti" : danni_ricevuti, 
 		"resistente"     : resistente, 
 		"debole"         : debole, 
-		"???"            : antiflusso
+		"???"            : antiflusso,
+		"colossale"      : colossale,
 	}
 
 ## - INTERFACCIA -
